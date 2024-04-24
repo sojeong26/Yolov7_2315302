@@ -21,7 +21,6 @@ providers = ['CUDAExecutionProvider', 'CPUExecutionProvider'] if cuda else ['CPU
 session = ort.InferenceSession(w, providers=providers)
 
 #tf.compat.disable_v2_behavior()
-#with tf.compat.Session() as sess:
 with tf.compat.v1.Session() as sess:
     x = tf.compat.v1.placeholder(tf.float32, [2])
     x2 = tf.square(x)
